@@ -5,9 +5,10 @@ function lengthConversion(req, res){
         let query = req.query;
         utils.checkParameters(query);
         let parameters = utils.getParameters(query);
-        let to = parameters.to;
+        let toUnit = parameters.toUnit;
         let from = parameters.from;
-        console.log(from,to);
+        let fromUnit = parameters.fromUnit;
+        console.log(from, fromUnit, toUnit);
         res.send('Length conversion');
     }catch(err){
         let body = {
