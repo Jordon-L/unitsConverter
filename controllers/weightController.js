@@ -1,4 +1,4 @@
-function weightConversion(req, res){
+function conversion(req, res){
     res.send('Weight conversion');
 };
 
@@ -6,5 +6,5 @@ function weightConversion(req, res){
 
 
 module.exports = {
-    weightConversion
+    conversion
 };

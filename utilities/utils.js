@@ -43,7 +43,6 @@ function getParameters(query){
     else{
         from = parseFloat(from);
     }
-    console.log({from, fromUnit, toUnit})
     return {from, fromUnit, toUnit};
 }
 

@@ -1,6 +1,7 @@
 const utils = require('../utilities/utils');
+const length = require('../models/lengthModel');
 
-function lengthConversion(req, res){
+function conversion(req, res){
     try{
         let query = req.query;
         utils.checkParameters(query);
@@ -8,8 +9,11 @@ function lengthConversion(req, res){
         let toUnit = parameters.toUnit;
         let from = parameters.from;
         let fromUnit = parameters.fromUnit;
-        console.log(from, fromUnit, toUnit);
-        res.send('Length conversion');
+        let result =  length.convert(from, fromUnit, toUnit);
+        let body = {
+            result : result
+        }
+        res.send(body);
     }catch(err){
         let body = {
             'error': err.message
@@ -23,5 +27,5 @@ function lengthConversion(req, res){
 
 
 module.exports = {
-    lengthConversion
+    conversion
 };

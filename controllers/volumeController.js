@@ -1,4 +1,4 @@
-function volumeConversion(req, res){
+function conversion(req, res){
     res.send('Volume conversion');
 };
 
@@ -6,5 +6,5 @@ function volumeConversion(req, res){
 
 
 module.exports = {
-    volumeConversion
+    conversion
 };
