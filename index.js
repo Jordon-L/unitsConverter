@@ -9,15 +9,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/length', (req, res) => {
-    lengthController.lengthConversion(req, res);
+    lengthController.conversion(req, res);
 });
 
 app.get('/weight', (req, res) => {
-    weightController.weightConversion(req, res);
+    weightController.conversion(req, res);
 });
 
 app.get('/volume', (req, res) => {
-    volumeController.volumeConversion(req, res);
+    volumeController.conversion(req, res);
 });
 
 
