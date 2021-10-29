@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
 const { expect } = require('chai');
-const utils = require('../utilities/utils');
+const utils = require('../../utilities/utils');
 
 describe('checkParameters test', function(){
     
@@ -8,7 +8,7 @@ describe('checkParameters test', function(){
         let query = {
         }
         expect(function(){
-            utils.checkParameters(query)
+            utils.checkParameters(query);
         })
         .to.throw(Error,'from parameter is required');
     });
@@ -19,7 +19,7 @@ describe('checkParameters test', function(){
             'toUnit': 'm'
         }
         expect(function(){
-            utils.checkParameters(query)
+            utils.checkParameters(query);
         })
         .to.throw(Error,'from parameter is required');
     });
@@ -41,7 +41,7 @@ describe('checkParameters test', function(){
             'fromUnit': 'cm'
         }
         expect(function(){
-            utils.checkParameters(query)
+            utils.checkParameters(query);
         })
         .to.throw(Error,'toUnit parameter is required');
     });
@@ -69,7 +69,7 @@ describe('getParameters test', function(){
             'toUnit': 'm'
         }
         expect(function(){
-            utils.getParameters(query)
+            utils.getParameters(query);
         })
         .to.throw(Error,'from parameter is not formatted correctly');
     });
@@ -81,7 +81,7 @@ describe('getParameters test', function(){
             'toUnit': 'm'
         }
         expect(function(){
-            utils.getParameters(query)
+            utils.getParameters(query);
         })
         .to.throw(Error,'fromUnit parameter is not a valid unit');
     });
@@ -93,7 +93,7 @@ describe('getParameters test', function(){
             'toUnit': 'dm'
         }
         expect(function(){
-            utils.getParameters(query)
+            utils.getParameters(query);
         })
         .to.throw(Error,'toUnit parameter is not a valid unit');
     });  
