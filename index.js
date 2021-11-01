@@ -3,9 +3,11 @@ const lengthController = require('./controllers/lengthController');
 const weightController = require('./controllers/weightController');
 const volumeController = require('./controllers/volumeController');
 const app = express();
+const path = require('path')
+app.use(express.static(path.join(__dirname, '/views/my-app/build')))
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.sendFile(path.join(__dirname, '/views/my-app/build', 'index.html'));
 });
 
 app.get('/length', (req, res) => {

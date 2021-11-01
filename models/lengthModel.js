@@ -5,6 +5,7 @@ Decimal.set({ precision: 6 })
 
 function convert(from, fromUnit, toUnit){
     let formula = conversionTable[fromUnit][toUnit];
+    
     let result = Decimal.mul(new Decimal(from),new Decimal(formula));
     return result.toString();
 }

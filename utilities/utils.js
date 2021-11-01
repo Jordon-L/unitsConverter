@@ -18,8 +18,7 @@ function checkParameters(query){
 //@parameter query  input from user
 //@return from and to parameters
 function getParameters(query){
-    let fromRegex = /^\d+\.?\d{0,9}$/;
-    let fromRegexAlt = /\d+\/[1-9]\d*$/
+    let fromRegex = /^\d+\.?\d{0,16}$/;
     let validUnits = ['mm', 'cm', 'm', 'km',
     'in', 'ft', 'yd', 'mi'];
     let from = query.from;
@@ -31,17 +30,8 @@ function getParameters(query){
     if(!(validUnits.includes(toUnit))){
         throw new Error('toUnit parameter is not a valid unit');
     }
-    if(!(fromRegex.test(from))){
-        if(fromRegexAlt.test(from)){
-            let array = from.split('/');
-            from = array[0]/array[1];
-        }
-        else{
-            throw new Error('from parameter is not formatted correctly');
-        }
-    }
-    else{
-        from = parseFloat(from);
+    if(!(fromRegex.test(from)) || typeof from != 'string'){
+        throw new Error('from parameter is not formatted correctly');
     }
     return {from, fromUnit, toUnit};
 }
